@@ -22,3 +22,7 @@ $ npm install -g chai
 ```
 $ mocha deepGet.spec.js
 ```
+
+## Acknowledgements
+
+* John Lozano [@SyntaxStacks](https://github.com/SyntaxStacks)
