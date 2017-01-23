@@ -66,4 +66,55 @@ describe('deepGet', function () {
             assert.deepEqual(actual, expected);
         });
     });
+
+    describe('edge cases', function () {
+        it('should return undefined if obj is undefined', function () {
+            actual = deepGet(undefined, 'example.path');
+            expected = undefined;
+
+            assert.deepEqual(actual, expected);
+        });
+
+        it('should return undefined if obj is null', function () {
+            actual = deepGet(null, 'example.path');
+            expected = undefined;
+
+            assert.deepEqual(actual, expected);
+        });
+
+        it('should return undefined if obj is an empty object', function () {
+            actual = deepGet({}, 'example.path');
+            expected = undefined;
+
+            assert.deepEqual(actual, expected);
+        });
+
+        it('should return undefined if obj is a string', function () {
+            actual = deepGet('this is a string', 'example.path');
+            expected = undefined;
+
+            assert.deepEqual(actual, expected);
+        });
+
+        it('should return undefined if obj is an empty string', function () {
+            actual = deepGet('', 'example.path');
+            expected = undefined;
+
+            assert.deepEqual(actual, expected);
+        });
+
+        it('should return undefined if obj is `true`', function () {
+            actual = deepGet(true, 'example.path');
+            expected = undefined;
+
+            assert.deepEqual(actual, expected);
+        });
+
+        it('should return undefined if obj is `false`', function () {
+            actual = deepGet(false, 'example.path');
+            expected = undefined;
+
+            assert.deepEqual(actual, expected);
+        });
+    });
 });

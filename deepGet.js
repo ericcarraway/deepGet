@@ -12,10 +12,17 @@ module.exports = deepGet;
  * @returns {*} returns the resolved value
  */
 function deepGet(obj, path, defaultValue) {
-    var pathArr = path.split('.');
+    var pathArr;
+    var nextObj;
+
+    if (obj === undefined || obj === null) {
+        return defaultValue;
+    }
+
+    pathArr = path.split('.');
 
     // prepare our found property and path array for recursion
-    var nextObj = obj[pathArr.shift()];
+    nextObj = obj[pathArr.shift()];
     if (nextObj) {
         if (pathArr.length > 0) {
             return deepGet(nextObj, pathArr.join('.'), defaultValue);
