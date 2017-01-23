@@ -1,5 +1,16 @@
 module.exports = deepGet;
 
+/**
+ * Gets the value at path of obj. If the resolved value is undefined,
+ * the defaultValue is returned in its place. Useful for avoiding
+ * "TypeError: Cannot read property 'someprop' of undefined"
+ *
+ * @param {Object} obj The object to query
+ * @param {String} path The path of the property to get
+ * @param {*} defaultValue The value returned for undefined resolved values
+ *
+ * @returns {*} returns the resolved value
+ */
 function deepGet(obj, path, defaultValue) {
     var pathArr = path.split('.');
 
