@@ -2,18 +2,24 @@ var assert = require('/usr/local/lib/node_modules/chai').assert;
 var deepGet = require('./deepGet.js');
 
 describe('deepGet', function () {
+    var testObj;
     var actual;
     var expected;
 
-    var testObj = {
-        some: {
-            deeply: {
-                nested: {
-                    prop: 'found it'
+    beforeEach(function () {
+        testObj = {
+            some: {
+                deeply: {
+                    nested: {
+                        prop: 'found it'
+                    }
                 }
             }
-        }
-    };
+        };
+
+        actual = null;
+        expected = null;
+    });
 
     describe('existent properties', function () {
         it('should return a deeply nested property', function () {
@@ -113,6 +119,26 @@ describe('deepGet', function () {
         it('should return undefined if obj is `false`', function () {
             actual = deepGet(false, 'example.path');
             expected = undefined;
+
+            assert.deepEqual(actual, expected);
+        });
+    });
+
+    describe('array handling', function () {
+        it('should return an array', function () {
+            testObj.some.deeply.nested.prop = ['an', 'array'];
+
+            actual = deepGet(testObj, 'some.deeply.nested.prop');
+            expected = ['an', 'array'];
+
+            assert.deepEqual(actual, expected);
+        });
+
+        it("should return an array's length property", function () {
+            testObj.some.deeply.nested.prop = ['an', 'array'];
+
+            actual = deepGet(testObj, 'some.deeply.nested.prop.length');
+            expected = 2;
 
             assert.deepEqual(actual, expected);
         });
