@@ -15,7 +15,7 @@ function deepGet(obj, path, defaultValue) {
     var pathArr;
     var nextObj;
 
-    if (obj === undefined || obj === null) {
+    if (obj === undefined || obj === null || typeof path !== 'string' || !(pathArr = path.split('.'))) {
         return defaultValue;
     }
 
