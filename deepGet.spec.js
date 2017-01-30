@@ -296,5 +296,77 @@ describe('deepGet', function () {
                 assert.deepEqual(actual, expected);
             });
         });
+
+        describe('and a default value is included', function () {
+            it('returns the default value on undefined', function () {
+                actual = deepGet(testObj, undefined, 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+
+            it('returns the default value on the empty string', function () {
+                actual = deepGet(testObj, '', 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+
+            it('returns the default value on boolean false', function () {
+                actual = deepGet(testObj, false, 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+
+            it('returns the default value on boolean true', function () {
+                actual = deepGet(testObj, true, 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+
+            it('returns the default value on zero', function () {
+                actual = deepGet(testObj, 0, 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+
+            it('returns the default value on a negative number', function () {
+                actual = deepGet(testObj, -1, 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+
+            it('returns the default value on a positive number', function () {
+                actual = deepGet(testObj, 23, 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+
+            it('returns the default value on an array', function () {
+                actual = deepGet(testObj, [23, 42], 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+
+            it('returns the default value on an empty object', function () {
+                actual = deepGet(testObj, {}, 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+
+            it('returns the default value on an empty array', function () {
+                actual = deepGet(testObj, [], 'fallback value');
+                expected = 'fallback value';
+
+                assert.deepEqual(actual, expected);
+            });
+        });
     });
 });

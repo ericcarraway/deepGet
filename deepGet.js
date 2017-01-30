@@ -23,7 +23,7 @@ function deepGet(obj, path, defaultValue) {
 
     // prepare our found property and path array for recursion
     nextObj = obj[pathArr.shift()];
-    if (nextObj) {
+    if (nextObj !== undefined) {
         if (pathArr.length > 0) {
             return deepGet(nextObj, pathArr.join('.'), defaultValue);
         }
