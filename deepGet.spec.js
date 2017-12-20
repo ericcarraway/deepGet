@@ -1,4 +1,4 @@
-var assert = require('/usr/local/lib/node_modules/chai').assert;
+var assert = require('chai').assert;
 var deepGet = require('./deepGet.js');
 
 describe('deepGet', function () {

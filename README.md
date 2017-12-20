@@ -12,15 +12,18 @@ deepGet(obj, path, defaultValue)
 
 ##### Prerequisites
 
-```
-$ npm install -g mocha
-
-$ npm install -g chai
-```
+None!
 
 ##### Running Tests
+
+With Yarn
 ```
-$ mocha deepGet.spec.js
+$ yarn test
+```
+
+with NPM
+```
+$ npm test
 ```
 
 ## Acknowledgements
