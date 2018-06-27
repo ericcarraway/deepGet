@@ -1,0 +1,18 @@
+{
+    // https://www.npmjs.com/package/eslint-config-airbnb-base
+    // This package provides Airbnb's base JS .eslintrc (without React plugins) as an extensible shared config.
+    "extends": "airbnb-base",
+
+    "env": {
+        "node": true,
+        "mocha": true
+    },
+
+    // custom overrides
+    "rules": {
+        "indent": ["error", 4],
+
+        // hoisted functions are OK
+        "no-use-before-define": ["error", { "functions": false }]
+    }
+}

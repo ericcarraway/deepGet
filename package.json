@@ -3,6 +3,11 @@
     "chai": "^4.1.2",
     "mocha": "^4.0.1"
   },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0"
+  },
   "scripts": {
     "test": "mocha deepGet.spec.js"
   }
