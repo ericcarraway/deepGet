@@ -1,4 +1,4 @@
-# deepGet
+# deepGet · DEPRECATED ⛔️
 
 ## Purpose
 Avoid the dreaded `TypeError: Cannot read property 'someprop' of undefined`
